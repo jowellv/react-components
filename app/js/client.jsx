@@ -15,15 +15,15 @@ var App = React.createClass({
     var results = this.props.items;
     if(searchString.length > 0){
       results = results.filter(function(r){
-          return r.name.toLowerCase().match( searchString );
+        return r.name.toLowerCase().match( searchString );
       });
     }
     return (
-      <main>
+      <article>
         <h1>{this.props.title}</h1>
         <input type="text" value={this.state.searchString} onChange={this.handleChange} placeholder="search artist here" />
         <ArtistList data={results} />
-      </main>
+      </article>
     )
   }
 });
@@ -39,4 +39,4 @@ var artistlist = [
 ];
 
 
-React.render(<App title="K-pop: " items={artistlist}/>, document.body);
+React.render(<App title="K-pop: " items={artistlist}/>, document.getElementsByTagName('main')[0]);

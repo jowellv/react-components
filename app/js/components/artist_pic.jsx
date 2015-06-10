@@ -4,6 +4,6 @@ var React = require('react');
 
 module.exports = React.createClass({
   render: function () {
-    return <img src={this.props.data.url} alt="pic" height="150" width="250" />
+    return <img src={this.props.artist.url} alt="pic" height="150" width="250" />
   }
 });
